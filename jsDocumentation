@@ -1,0 +1,39 @@
+Global variables:
+    runningTotal : type (int) default(0)
+    buffer : type(string) default(0)
+    previousOperator : type(string) default(null)
+    screen : type(string)
+
+Input:
+    accepted through the value present in the button that has been clicked
+
+functions:
+    buttonClick : 
+        arguments: value(string)
+        Use: segrates the code into 2 pathways for different inputs (number and symbol)
+        returns: undefined
+    
+    handleNumber :
+        arguments: value(string)
+        Use: if the buffer is set to 0 then it remains unchages else value is appended at the end of the string present in buffer
+        returns: undefined
+    
+    handleSymbol :
+        arguments: value(string)
+        Use: Uses swtich case to handle different Symbols. Calls upon `flushOperation` if the operator is = and `handleMath` if the operator is +,/,- or *
+        returns: undefined
+    
+    handleMath :
+        arguments: value(string)
+        Use: sets runningTotal(int) to intBuffer(int) if 0 else calls upon flushOperation. Sets previousOperator to value and buffer to 0.
+        returns: undefined
+    
+    flushOperation :
+        arguments: intBuffer(int) -> buffer is converted to an integer
+        Use: performs the mathematical operation according the value stored in previousOperator(string) and stored it in runningTotal(int)
+        returns: undefined
+    
+    rerender :
+        arguments: None
+        Use: sets the input text to the value stored in buffer
+        returns: undefined
