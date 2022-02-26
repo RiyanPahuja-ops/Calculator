@@ -65,4 +65,5 @@ body{
     align-content: stretch;
     justify-content: space-between;
     margin-bottom: .5%;
+    width: 100%;
 }
